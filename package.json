@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This is ToDo app using server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jitendra-kaswa/Todo.git"
+  },
+  "author": "Jitendra Kaswa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jitendra-kaswa/Todo/issues"
+  },
+  "homepage": "https://github.com/Jitendra-kaswa/Todo#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "mongoose": "^5.12.3",
+    "nodemon": "^2.0.7"
+  }
+}
