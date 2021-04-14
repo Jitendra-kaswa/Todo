@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const port = 8000;
 const app= express();
 
+const db = require('./config/mongoose');
+
 // import sass into project
 const sassMiddleware = require('node-sass-middleware');
 app.use(sassMiddleware({

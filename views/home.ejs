@@ -1,5 +1,24 @@
 <link rel="stylesheet" href="css/home.css">
 <script src="js/home.js"></script>
-<section>
-    This is main section
-</section>
+
+<div class="container">
+    <p>To Do</p>
+    <div>
+        <div>
+            <form action="/todo/create" method="POST">
+                <textarea name="title" id="" cols="20" rows="10" required placeholder="Type Here to add ..."></textarea>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div>
+            Todo List Will Be palced Here -
+            <br>
+            <ul>
+                <%for(post of posts){%>
+                    <li id="<%= post._id %>"><%=post.title %></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</div>
+    
