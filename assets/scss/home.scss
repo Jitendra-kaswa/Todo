@@ -3,8 +3,21 @@
     padding: 0;
     background-color:white;
 }
-
+p{
+    display: inline;
+}
 .container{
     margin: auto 0;
+    margin-left: 50px;
     width: 50vw;
+    div{
+        margin-top: 50px;
+        ul{
+            margin: 20px;
+            list-style: none;
+            li{
+                margin: 10px;
+            }
+        }
+    }
 }

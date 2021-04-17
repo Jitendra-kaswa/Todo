@@ -1,10 +1,11 @@
 const Todo = require('../models/todo');
 
 module.exports.show = async (req,res)=>{
-    const posts =  await Todo.find({}).exec();
-    console.log(posts);
+    const notCompletedTasks =  await Todo.find({done:false}).exec();
+    const compeltedTasks = await Todo.find({done:true}).exec();
     return res.render('home',{
         title:"Home Page",
-        posts:posts
+        notCompletedTasks:notCompletedTasks,
+        completedTasks:compeltedTasks
     });
 }

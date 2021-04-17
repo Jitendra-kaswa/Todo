@@ -3,6 +3,17 @@
   padding: 0;
   background-color: white; }
 
+p {
+  display: inline; }
+
 .container {
   margin: auto 0;
+  margin-left: 50px;
   width: 50vw; }
+  .container div {
+    margin-top: 50px; }
+    .container div ul {
+      margin: 20px;
+      list-style: none; }
+      .container div ul li {
+        margin: 10px; }

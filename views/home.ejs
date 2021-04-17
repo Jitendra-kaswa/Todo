@@ -2,7 +2,7 @@
 <script src="js/home.js"></script>
 
 <div class="container">
-    <p>To Do</p>
+    <p>Todo</p>
     <div>
         <div>
             <form action="/todo/create" method="POST">
@@ -11,11 +11,30 @@
             </form>
         </div>
         <div>
-            Todo List Will Be palced Here -
+            Todo List -
             <br>
             <ul>
-                <%for(post of posts){%>
-                    <li id="<%= post._id %>"><%=post.title %></li>
+                <%for(post of notCompletedTasks){%>
+                    <li id="<%= post._id %>">
+                        <input type="checkbox" class="unchecked-box">
+                        <p><%=post.title %></p>
+                        <!-- <a class="delete-post-button" href="/todo/delete/<%=post.id%>">Delete</a>
+                        <a class="update-post-button" href="/todo/update/<%=post.id%>">Update</a> -->
+                        <button type="submit" class="delete-task">Delete </button>
+                    </li>
+                <%}%>
+            </ul>
+            Done Tasks -
+            <br>
+            <ul>
+                <%for(post of completedTasks){%>
+                    <li id="<%= post._id %>">
+                        <input type="checkbox" checked="true" class="checked-box">
+                        <p><%=post.title %></p>
+                        <!-- <a class="delete-post-button" href="/todo/delete/<%=post.id%>">Delete</a>
+                        <a class="update-post-button" href="/todo/update/<%=post.id%>">Update</a> -->
+                        <button type="submit" class="delete-task">Delete</button>
+                    </li>
                 <%}%>
             </ul>
         </div>
