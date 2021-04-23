@@ -1,11 +1,10 @@
 <link rel="stylesheet" href="css/home.css">
-<script src="js/home.js"></script>
 
 <div class="container">
     <p>Todo</p>
     <div>
         <div>
-            <form action="/todo/create" method="POST">
+            <form id="new-task-form" action="/todo/create" method="POST">
                 <textarea name="title" id="" cols="20" rows="10" required placeholder="Type Here to add ..."></textarea>
                 <input type="submit" value="Add">
             </form>
@@ -13,31 +12,33 @@
         <div>
             Todo List -
             <br>
-            <ul>
+            <ul id="yet-to-complete-tasks">
                 <%for(post of notCompletedTasks){%>
                     <li id="<%= post._id %>">
-                        <input type="checkbox" class="unchecked-box">
+                        <input type="checkbox" class="unchecked-box" onclick="toggletasks(this)">
                         <p><%=post.title %></p>
                         <!-- <a class="delete-post-button" href="/todo/delete/<%=post.id%>">Delete</a>
                         <a class="update-post-button" href="/todo/update/<%=post.id%>">Update</a> -->
-                        <button type="submit" class="delete-task">Delete </button>
+                        <button type="submit" class="delete-task" onclick="deletefunction(this)">Delete </button>
+                        <button type="submit" class="update-task" onclick="updatefunction(this)">Update</button>
                     </li>
                 <%}%>
             </ul>
             Done Tasks -
             <br>
-            <ul>
+            <ul id="completed-tasks">
                 <%for(post of completedTasks){%>
                     <li id="<%= post._id %>">
-                        <input type="checkbox" checked="true" class="checked-box">
+                        <input type="checkbox" checked="true" class="checked-box" onclick="toggletasks(this)">
                         <p><%=post.title %></p>
                         <!-- <a class="delete-post-button" href="/todo/delete/<%=post.id%>">Delete</a>
                         <a class="update-post-button" href="/todo/update/<%=post.id%>">Update</a> -->
-                        <button type="submit" class="delete-task">Delete</button>
+                        <button type="submit" class="delete-task" onclick="deletefunction(this)">Delete</button>
                     </li>
                 <%}%>
             </ul>
         </div>
     </div>
 </div>
+<script src="js/home.js"></script>
     
